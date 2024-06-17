@@ -11,6 +11,6 @@ jobs:
       - name: Install dependencies
         run: npm install && npx playwright install --with-deps
       - name: Run tests
-        run: npx playwright test
+        run: npm run test
         env:
           PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
