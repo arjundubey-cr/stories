@@ -1,36 +1,37 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Starting the server and testing
 
 First, run the development server:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Testing
+- Make sure that your local environment is running. 
+- Inside story.spec.ts
+  - `await page.goto('localhost:3000'); // Change this to your local dev server`
+```bash
+npm run test
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Design Choices and Optimizations
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Design Choices
 
-## Learn More
+1. **Tailwind CSS**: Tailwind CSS is used for styling due to its utility-first approach, which promotes the creation of maintainable and scalable styles.
+2. **Story Transitions**: Animations for story transitions are handled using CSS keyframes defined in `StoryView.css`. This allows for smooth transitions without significant performance overhead.
 
-To learn more about Next.js, take a look at the following resources:
+### Optimizations
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Lazy Loading Thumbnails**: Thumbnails are lazily loaded using the Intersection Observer API to improve initial load times and reduce unnecessary network requests.
+2. **Image Prefetching**: Next stories are prefetched to the browser cache to ensure smooth transitions between stories.
+3. **Conditional Animations**: CSS animations are conditionally applied only when necessary to avoid unnecessary re-renders and improve performance.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### Scalability
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Component Reusability**: The application is designed with reusable components, making it easier to scale and maintain.
+2. **Tailwind CSS**: Using Tailwind CSS allows for scalable and consistent styling across the application.
+3. **Performance Optimization**: Techniques such as lazy loading and prefetching are used to ensure the application can handle a large number of stories without performance degradation.
