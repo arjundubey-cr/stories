@@ -12,7 +12,7 @@ npm run dev
 ### Testing
 - Make sure that your local environment is running. 
 - Inside story.spec.ts
-  - `await page.goto('localhost:3000'); // Change this to your local dev server`
+  - `await page.goto('/'); // Change this to your local dev server if not running on :3000`
 ```bash
 npm run test
 ```

@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Story Component', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('localhost:3000'); // Change this to your local dev server
+    await page.goto('/');
   });
   test('should display loading state initially', async ({ page }) => {
     await expect(page.locator('text=Loading...')).toBeVisible();
