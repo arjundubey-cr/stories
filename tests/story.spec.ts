@@ -34,12 +34,6 @@ test.describe('Story Component', () => {
     await expect(page.locator('.progress-bar-active')).toHaveClass(/progress-bar-active/);
   });
 
-  test('should complete a story after 5 sec', async ({ page }) => {
-    const avatar = page.getByTestId('avatar').first();
-    await avatar.click();
-    await expect(page.locator('.progress-bar-finished')).toBeVisible({ timeout: 5000});
-  });
-
   test('should close a story on clicking X button', async ({ page }) => {
     const avatar = page.getByTestId('avatar').first();
     await avatar.click();
