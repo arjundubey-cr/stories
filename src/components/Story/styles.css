@@ -1,0 +1,71 @@
+.story-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background-color: rgb(30, 30, 30);
+}
+
+.progress-bars {
+	display: flex;
+	margin-top: 25px;
+}
+
+.progress-bar-container {
+	background: rgb(150, 150, 150);
+	height: 2px;
+	flex: 1;
+	margin: 0px 5px;
+}
+
+.progress-bar-container:first-child {
+	margin-left: 0px;
+}
+
+.progress-bar-container:last-child {
+	margin-right: 0px;
+}
+
+.progress-bar {
+	background: white;
+	height: 2px;
+	width: 0%;
+}
+
+.progress-bar-active {
+	animation-name: ProgressBar;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	transition-delay: 0.5s;
+}
+
+.progress-bar-finished {
+	width: 100%;
+}
+
+@keyframes ProgressBar {
+	0% {
+		width: 0%;
+	}
+
+	100% {
+		width: 100%;
+	}
+}
+
+/* Animation for user-change */
+.animate-user-change {
+    animation: grow 0.5s ease-in-out forwards;
+}
+
+@keyframes grow {
+    0% {
+        transform: scaleX(0.1);
+    }
+    100% {
+        transform: scaleX(1);
+    }
+}
+

@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.mobile-view{
+  max-width: 800px;
+  max-height: 900px;
+  margin: 0 auto;
+}
