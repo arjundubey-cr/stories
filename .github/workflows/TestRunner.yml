@@ -22,4 +22,4 @@ jobs:
       - name: Run tests
         run: npx playwright test
         env:
-          PLAYWRIGHT_TEST_BASE_URL: ${{ github.event.deployment_status.target_url }}
+          PLAYWRIGHT_TEST_BASE_URL: https://stories-pi-livid.vercel.app

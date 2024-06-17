@@ -15,28 +15,24 @@ test.describe('Story Component', () => {
     console.log(count);
   });
   test('should open story viewer on avatar click', async ({ page }) => {
-    const avatar = page.getByTestId('avatar').first();
-    await avatar.click();
+    await page.getByTestId('avatar').first().click();
     await expect(page.locator(".story-container")).toBeVisible();
   });
   
   test('should navigate to the next story', async ({ page }) => {
-    const avatar = page.getByTestId('avatar').first();
-    await avatar.click();
+    await page.getByTestId('avatar').first().click();
     await page.locator('.story-container .right-0').click();
     await expect(page.locator('.progress-bar-active')).toHaveClass(/progress-bar-active/);
   });
 
   test('should navigate to the previous story', async ({ page }) => {
-    const avatar = page.getByTestId('avatar').first();
-    await avatar.click();
+    await page.getByTestId('avatar').first().click();
     await page.locator('.story-container .left-0').click();
     await expect(page.locator('.progress-bar-active')).toHaveClass(/progress-bar-active/);
   });
 
   test('should close a story on clicking X button', async ({ page }) => {
-    const avatar = page.getByTestId('avatar').first();
-    await avatar.click();
+    await page.getByTestId('avatar').first().click();
     const closeButton = page.locator("role=button", {hasText: "X"});
     console.log(closeButton);
     await closeButton.click();
