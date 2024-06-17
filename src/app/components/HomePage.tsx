@@ -117,7 +117,7 @@ const Story = () => {
 	}
 	return (
 		<div>
-			<div className="flex overflow-x-auto w-100" ref={thumbnailContainerRef}>
+			<div className="flex overflow-x-auto w-100" data-testid="avatars-list" ref={thumbnailContainerRef}>
 				{userData &&
 					userData.map((user, index) => (
 						<StoryAvatar

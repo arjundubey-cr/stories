@@ -35,7 +35,7 @@ const StoryAvatar: React.FC<StoryAvatarProps> = ({ src, name, onClick }) => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center space-y-1" onClick={onClick}>
+    <div className="flex flex-col items-center space-y-1" onClick={onClick} data-testid="avatar">
       <div className="bg-gradient-to-tr from-yellow-400 to-purple-600 p-0.5 rounded-full">
         <a className="block bg-white p-0.5 rounded-full cursor-pointer">
           <img
