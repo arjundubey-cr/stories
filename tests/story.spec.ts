@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test.describe('Story Component', () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto('localhost:3000');
+    await page.goto('localhost:3000'); // Change this to your local dev server
   });
   test('should display loading state initially', async ({ page }) => {
     await expect(page.locator('text=Loading...')).toBeVisible();
@@ -37,7 +37,7 @@ test.describe('Story Component', () => {
   test('should complete a story after 5 sec', async ({ page }) => {
     const avatar = page.getByTestId('avatar').first();
     await avatar.click();
-    await expect(page.locator('.progress-bar-finished')).toBeVisible({ timeout: 6000});
+    await expect(page.locator('.progress-bar-finished')).toBeVisible({ timeout: 5000});
   });
 
   test('should close a story on clicking X button', async ({ page }) => {

@@ -7,7 +7,7 @@ export async function getUserData() {
 	);
 	const data = await userResponse.json();
 	data.results.forEach((user: any) => {
-		const numberOfStories = (user.dob.age % 5) + 1;
+		const numberOfStories = (user.dob.age % 5) + 2;
 		user.stories = Array.from(
 			{ length: numberOfStories },
 			(_, i) => `https://picsum.photos/id/${numberOfStories}${i}/1080/1350`,

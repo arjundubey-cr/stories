@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, Fragment } from "react";
 import { getUserData } from "@/utils";
 import StoryAvatar from "./Story/StoryAvatar";
 import StoryViewer from "./Story/StoryViewer";
@@ -120,11 +120,13 @@ const Story = () => {
 			<div className="flex overflow-x-auto w-100" data-testid="avatars-list" ref={thumbnailContainerRef}>
 				{userData &&
 					userData.map((user, index) => (
-						<StoryAvatar
+						<Fragment key={user.name.first+index}>
+							<StoryAvatar
 							name={`${user.name.first}`}
 							src={user.picture.thumbnail}
 							onClick={() => selectUserStory(index)}
-						/>
+							/>
+						</Fragment>
 					))}
 			</div>
 
